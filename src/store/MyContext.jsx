@@ -6,3 +6,9 @@ export const MyContext = createContext({
   setName: () => {},
   setAge: () => {},
 });
+
+export const AuthContext = createContext({
+  isisAuthenticated: false,
+  login: () => {},
+  logout: () => {},
+});
