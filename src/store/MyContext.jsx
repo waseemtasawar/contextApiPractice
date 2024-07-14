@@ -12,3 +12,11 @@ export const AuthContext = createContext({
   login: () => {},
   logout: () => {},
 });
+
+export const ProfleUpdateContext = createContext({
+  user: {
+    name: "",
+    age: 0,
+  },
+  updateUser: () => {},
+});
