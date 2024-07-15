@@ -1,9 +1,15 @@
 import { useState } from "react";
 import Child1 from "./component/Child1";
-import { MyContext, AuthContext, ProfleUpdateContext } from "./store/MyContext";
-import Auth from "./component/Auth";
-import Profile from "./component/Profile";
+import {
+  MyContext,
+  AuthContext,
+  ProfleUpdateContext,
+  CartContex,
+} from "./store/MyContext";
+// import Auth from "./component/Auth";
+// import Profile from "./component/Profile";
 // import GrandChild1 from "./component/GrandChild1";
+import Cart from "./component/Cart";
 
 function App() {
   // for set Name and Age this is some other component
@@ -20,6 +26,15 @@ function App() {
 
   const [user, setUser] = useState({ name: "Ali Raza", age: 23 });
   const updateUser = (newUser) => setUser(newUser);
+
+  // Add to cart and remove Items
+
+  const [cart, setCart] = useState([]);
+
+  const Additems = (items) => setCart([...cart, items]);
+  const RemoveItems = (items) =>
+    setCart(cart.filter((cartItem) => cartItem != items));
+
   return (
     // for name and Age
 
@@ -35,9 +50,15 @@ function App() {
 
     // for Profile
 
-    <ProfleUpdateContext.Provider value={{ user, updateUser }}>
-      <Profile />
-    </ProfleUpdateContext.Provider>
+    // <ProfleUpdateContext.Provider value={{ user, updateUser }}>
+    //   <Profile />
+    // </ProfleUpdateContext.Provider>
+
+    // for Add and Remove Itmes for Cart
+
+    <CartContex.Provider value={{ cart, Additems, RemoveItems }}>
+      <Cart />
+    </CartContex.Provider>
   );
 }
 

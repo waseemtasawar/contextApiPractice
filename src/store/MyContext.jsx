@@ -20,3 +20,9 @@ export const ProfleUpdateContext = createContext({
   },
   updateUser: () => {},
 });
+
+export const CartContex = createContext({
+  cart: [],
+  Additems: () => {},
+  RemoveItems: () => {},
+});
