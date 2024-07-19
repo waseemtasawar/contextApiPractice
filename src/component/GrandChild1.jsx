@@ -25,7 +25,7 @@ const GrandChild1 = () => {
         type="number"
         value={age}
         onChange={handleAgeChange}
-        placeholder="Enter new age"
+        placeholder="Enter new age the age is in integer"
       />
     </div>
   );
