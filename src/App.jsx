@@ -24,8 +24,8 @@ function App() {
 
   // for uSer Profile
 
-  const [user, setUser] = useState({ name: "Ali Raza", age: 23 });
-  const updateUser = (newUser) => setUser(newUser);
+  // const [user, setUser] = useState({ name: "Ali Raza", age: 23 });
+  // const updateUser = (newUser) => setUser(newUser);
 
   // Add to cart and remove Items
 
